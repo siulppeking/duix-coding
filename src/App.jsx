@@ -1,3 +1,5 @@
+import { useState } from "react";
+import Alert from "./components/alert/Alert";
 import Button from "./components/button/Button";
 import Card from "./components/card/Card"; // 👈 nuevo componente Card
 import "./index.css";
@@ -6,6 +8,9 @@ const App = () => {
   const onClick = () => {
     alert("¡Botón peligroso clickeado!");
   };
+
+  const [showAlert, setShowAlert] = useState(true);
+  const [showAlert2, setShowAlert2] = useState(true);
 
   return (
     <div className="app-container" style={{ padding: "2rem", textAlign: "center" }}>
@@ -54,6 +59,40 @@ const App = () => {
           buttonText="Abrir"
         />
       </div>
+      <h1>Alertas Personalizadas</h1>
+
+      {showAlert && (
+        <Alert
+          variant="danger"
+          title="Error"
+          message="Hubo un problema al guardar los datos."
+          onClose={() => setShowAlert(false)}
+        />
+      )}
+
+      <Alert
+        variant="success"
+        title="Éxito"
+        message="Tu operación se realizó correctamente."
+      />
+
+
+      {showAlert2 && (
+        <Alert
+          variant="warning"
+          title="Advertencia"
+          message="Revisa los campos antes de continuar."
+          onClose={() => setShowAlert2(false)}
+        />
+      )}
+
+
+
+      <Alert
+        variant="info"
+        title="Información"
+        message="Nueva versión disponible."
+      />
     </div>
   );
 };
