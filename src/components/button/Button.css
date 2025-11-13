@@ -1,0 +1,64 @@
+/* ===== BOTÓN BASE ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+/* ===== VARIANTES ===== */
+.btn-primary {
+  background-color: var(--btn-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--btn-outline);
+  color: var(--btn-text);
+}
+
+.btn-outline:hover {
+  background-color: var(--btn-outline);
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* ===== TAMAÑOS ===== */
+.btn-sm {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+}
+
+.btn-md {
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+}
+
+.btn-lg {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.6rem;
+}
+
+/* ===== ESTADO DISABLED ===== */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
